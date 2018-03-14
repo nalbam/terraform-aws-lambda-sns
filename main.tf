@@ -23,12 +23,12 @@ resource "aws_sns_topic" "default" {
 resource "aws_sns_topic_subscription" "default" {
   topic_arn = "${aws_sns_topic.default.arn}"
   protocol = "lambda"
-  endpoint = "${module.lambda.lambda_function_arn}"
+  endpoint = "${module.lambda.arn}"
 }
 
 resource "aws_lambda_permission" "default" {
   action = "lambda:invokeFunction"
-  function_name = "${module.lambda.lambda_function_arn}"
+  function_name = "${module.lambda.arn}"
   principal = "sns.amazonaws.com"
   statement_id = "AllowSNSToSlackExecutionFromSNS"
 
