@@ -12,7 +12,7 @@ module "lambda" {
   handler = "index.handler"
   memory_size = 512
   timeout = 5
-  s3_bucket = "bucket_name"
-  s3_key = "data/demo.zip"
+  s3_bucket = "deploy_bucket_name"
+  s3_key = "deploy/latest.zip"
 }
 ```
