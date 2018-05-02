@@ -30,7 +30,7 @@ resource "aws_lambda_permission" "default" {
   action = "lambda:invokeFunction"
   function_name = "${module.lambda.arn}"
   principal = "sns.amazonaws.com"
-  statement_id = "AllowSNSToSlackExecutionFromSNS"
+  statement_id = "AllowExecutionFromSNS"
 
   source_arn = "${aws_sns_topic.default.arn}"
 }
