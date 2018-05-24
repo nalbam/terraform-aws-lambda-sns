@@ -13,6 +13,6 @@ module "lambda" {
   memory_size = 512
   timeout = 5
   s3_bucket = "deploy_bucket_name"
-  s3_key = "deploy/latest.zip"
+  s3_key = "deploy/lambda.zip"
 }
 ```
