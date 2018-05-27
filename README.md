@@ -2,17 +2,23 @@
 
 ## usage
 ```
-module "lambda" {
+module "slack-sns" {
   source = "git::https://github.com/nalbam/terraform-aws-lambda-sns.git"
-  region = "ap-northeast-2"
+  region = "${var.region}"
 
-  name = "demo"
-  stage = "dev"
-  runtime = "nodejs6.10"
+  name = "slack"
+  stage = "${var.stage}"
+  description = "sns > lambda > slack"
+  runtime = "nodejs8.10"
   handler = "index.handler"
   memory_size = 512
   timeout = 5
-  s3_bucket = "deploy_bucket_name"
-  s3_key = "deploy/lambda.zip"
+  s3_bucket = "${var.bucket}"
+  s3_key = "data/lambda-slack.zip"
+
+  env_vars = {
+    PROFILE = "${var.stage}"
+    SLACK_HOOK_URL = "${var.SLACK_HOOK_URL}"
+  }
 }
 ```
