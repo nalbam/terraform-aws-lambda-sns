@@ -18,7 +18,7 @@ module "lambda" {
 }
 
 resource "aws_sns_topic" "default" {
-  name = "${var.name}-${var.stage}"
+  name = "${var.stage}-${var.name}"
 }
 
 resource "aws_sns_topic_subscription" "default" {
