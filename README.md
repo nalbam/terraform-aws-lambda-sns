@@ -1,7 +1,8 @@
 # terraform-aws-lambda-sns
 
 ## usage
-```
+
+```hcl
 module "slack-sns" {
   source = "git::https://github.com/nalbam/terraform-aws-lambda-sns.git"
   region = "${var.region}"
