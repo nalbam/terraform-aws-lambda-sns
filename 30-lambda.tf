@@ -32,6 +32,5 @@ resource "aws_lambda_permission" "default" {
   function_name = module.lambda.arn
   principal     = "sns.amazonaws.com"
   statement_id  = "AllowExecutionFromSNS"
-
-  source_arn = aws_sns_topic.default.arn
+  source_arn    = aws_sns_topic.default.arn
 }
