@@ -1,7 +1,7 @@
 # Lambda Function : sns > lambda
 
 module "lambda" {
-  source = "git::https://github.com/nalbam/terraform-aws-lambda.git"
+  source = "github.com/nalbam/terraform-aws-lambda?ref=v0.12.1"
   region = var.region
 
   name        = var.name
